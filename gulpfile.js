@@ -13,7 +13,7 @@ const gulp                      = require('gulp'),
       uglify                    = require('gulp-uglify'), // 자바스크립트 코드를 압축해 용량을 줄임
       rename                    = require('gulp-rename'), // 파일의 이름을 변경
       browserSync               = require('browser-sync').create(); // 서버생성
-      var deploy                = require('gulp-gh-pages');
+      deploy                = require('gulp-gh-pages');
 
 var SRC_FOLDER = './src';
 var DIST_FOLDER = './dist';
@@ -147,7 +147,7 @@ gulp.task('browserSync', function() {
 gulp.task('build', gulp.series('html','ejs','scss:compile','js','images','svg','fonts', gulp.parallel('browserSync', 'watch')));
 gulp.task('default', gulp.series('build', gulp.parallel('browserSync', 'watch')));
 /* gulp.series 와 gulp.parallel 차이점 조사 */ 
-gulp.task('deploy', function() {
-    return gulp.src('./dist/**/*')
-      .pipe(ghPages());
+gulp.task('deploy', function () {
+    return gulp.src("./dist/**/*")
+      .pipe(deploy())
   });
