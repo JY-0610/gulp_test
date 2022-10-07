@@ -13,7 +13,7 @@ const gulp                      = require('gulp'),
       uglify                    = require('gulp-uglify'), // 자바스크립트 코드를 압축해 용량을 줄임
       rename                    = require('gulp-rename'), // 파일의 이름을 변경
       browserSync               = require('browser-sync').create(); // 서버생성
-      deploy                = require('gulp-gh-pages');
+      deploy                    = require('gulp-gh-pages');
 
 var SRC_FOLDER = './src';
 var DIST_FOLDER = './dist';
